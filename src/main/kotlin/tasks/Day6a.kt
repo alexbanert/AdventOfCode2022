@@ -7,10 +7,11 @@ fun main(args: Array<String>) {
     val line = getInput("6")[0]
     val chars = line.toCharArray().toList()
 
-    var index = 14
+    val windowSize = 14
+    var index = windowSize
     run breaking@{
-        chars.windowed(14).forEach {
-            if (it.toSet().size == 14) {
+        chars.windowed(windowSize).forEach {
+            if (it.toSet().size == windowSize) {
                 println(index)
                 return@breaking
             }
